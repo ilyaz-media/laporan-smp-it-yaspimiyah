@@ -1,0 +1,5 @@
+# Folder aset statis
+#
+# Letakkan file statis di sini (favicon, logo, robots.txt, dll).
+# Semua isi folder ini disalin apa adanya ke root hasil build oleh Vite
+# dan dapat diakses dari URL utama, contoh: /favicon.svg
