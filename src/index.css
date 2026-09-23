@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  --color-primary-950: #172554;
+  --font-sans: "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-100 text-slate-800 antialiased;
+}
+
+/* Scrollbar modern bernuansa biru */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #93c5fd;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #60a5fa;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.35s ease-out both;
+}
+
+/* ===== Animasi popup toast ===== */
+@keyframes toastIn {
+  0% {
+    opacity: 0;
+    transform: translateX(60px) scale(0.9);
+  }
+  60% {
+    transform: translateX(-4px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes toastOut {
+  to {
+    opacity: 0;
+    transform: translateX(50px) scale(0.95);
+  }
+}
+
+@keyframes popIcon {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes progressShrink {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(26px) rotate(220deg);
+    opacity: 0;
+  }
+}
+
+.animate-toast-in {
+  animation: toastIn 0.45s cubic-bezier(0.22, 1.4, 0.36, 1) both;
+}
+
+.animate-toast-out {
+  animation: toastOut 0.25s ease-in both;
+}
+
+.animate-pop-icon {
+  animation: popIcon 0.5s cubic-bezier(0.22, 1.6, 0.36, 1) 0.1s both;
+}
+
+.animate-progress {
+  animation: progressShrink linear both;
+}
+
+.animate-confetti {
+  animation: confettiFall 0.9s ease-out 0.15s both;
+}
